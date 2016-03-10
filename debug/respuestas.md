@@ -18,7 +18,7 @@ LFLAGS = ./fpe_x87_sse/fpe_x87_sse_c.o -lm
 ```
 
 * `-DTRAPFPE` requiere agregar la función `set_fpe_x87_sse_();`,
-definida en el archivo fpe_x87_sse/fpe_x87_sse.c.  Para  que el
+definida en el archivo `fpe_x87_sse/fpe_x87_sse.c`.  Para  que el
 programa *linkee* adecuadamente se usa `LFLAGS` como se muestra.
 La variable `IFLAGS` se usa para poder compilar los programas en
 `fpe/` con el .h que está en la carpeta `fpe/fpe_x87_sse/`.
@@ -27,8 +27,31 @@ La variable `IFLAGS` se usa para poder compilar los programas en
 
 #### Sin -DTRAPFE
 
-test_fpe1.e   a = 1, b = 0
-respuesta:    c = inf
+```
+$ ./test_fpe1.e 
+Insert a, b 
+1
+0
+c = inf 
+
+```
+
+```
+$ ./test_fpe2.e 
+Insert a, b 
+1
+0
+c = 1.000000 
+```
+
+```
+$ ./test_fpe3.e 
+Insert a, b 
+1
+0
+c = inf 
+```
+
 
 test_fpe2.e   a = 1, b = 0
 respuesta:    c = 1.0   
