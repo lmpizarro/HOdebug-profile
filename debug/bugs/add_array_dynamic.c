@@ -23,5 +23,7 @@ int main(int argc, char **argv) {
   }
   sum = add_array(a, b, 3);
   printf("The addition is %d\n", sum);
+  free(b);
+  free(a);
   return 0;
 }
