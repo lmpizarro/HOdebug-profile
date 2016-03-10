@@ -96,6 +96,14 @@ y genera un mensaje indicando el error.
 
 ## Segmentation Fault
 
+[ulimit y sysctl](http://www.linuxhowtos.org/Tips%20and%20Tricks/ulimit.htm)
+son programas programas que permiten poner límite a la disponibilidad
+de recursos de sistema. `$ulimit -a` permite conocer el límite de los recursos.
+
+Cuando se ejecuta el código `big.x` antes de ejectutar `$ulimit -s unlimited` 
+,que no pone límites en el uso de la memoria disponible para el stack ,  
+produce un error: `Violación de segmento ('core' generado)`. 
+
 
 ## Valgrind
 
@@ -110,6 +118,7 @@ y genera un mensaje indicando el error.
 
 ```
 Violación de segmento (`core' generado)
+ 
 ```
 
 

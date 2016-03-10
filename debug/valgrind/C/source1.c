@@ -20,7 +20,7 @@
 #include <string.h>
 #include <stdio.h>
 
-#define SIZE 1000
+#define SIZE 4
 
 void mat_Tmat_mul( float * A, float * C ){
 
@@ -63,4 +63,3 @@ int main( int argc, char * argv[] ){
   
   return 0;
 }
-  
