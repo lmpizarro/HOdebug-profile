@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #ifdef TRAPFPE
 #include "fpe_x87_sse.h"
 #endif

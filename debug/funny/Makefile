@@ -6,13 +6,9 @@ LD = $(CC)
 SOURCE_C = $(wildcard *.c)
 OBJECTS_C = $(patsubst %.c, %_c.o, $(SOURCE_C))
 
-EXECUTABLE = test_fpe1.e  test_fpe2.e test_fpe3.e
+EXECUTABLE = test_oob2.e
 
-
-
-CFLAGS = -DTRAPFPE
-IFLAGS = -I./fpe_x87_sse
-LFLAGS = ./fpe_x87_sse/fpe_x87_sse_c.o -lm
+#CFLAGS = -DDEBUG
 
 default: help
 
@@ -34,13 +30,7 @@ all: objects executable
 %_c.o: %.c
 	$(CC) -c $^ -o $@ $(CFLAGS) $(IFLAGS)
 
-test_fpe1.e: test_fpe1_c.o 
-	$(LD) $^ -o $@  $(LFLAGS)
-
-test_fpe2.e: test_fpe2_c.o 
-	$(LD) $^ -o $@  $(LFLAGS)
-
-test_fpe3.e: test_fpe3_c.o 
+test_oob2.e: test_oob2_c.o 
 	$(LD) $^ -o $@  $(LFLAGS)
 
 
