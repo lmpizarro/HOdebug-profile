@@ -6,9 +6,9 @@
 
 Para la solución de este problema escribí 2 Makefile
 uno en fpe/, y el otro en fpe/fpe_x87_sse/. Este último
-Makefile compila fpe_x87_sse.c  y genera el objeto fpe_x87_sse_c.o.
+`Makefile` compila `fpe_x87_sse.c`  y genera el objeto `fpe_x87_sse_c.o`.
 
-El Makefile en fpe setea algunos variables que se van a usar como flags:
+El `Makefile` en `fpe/` setea algunos variables que se van a usar como flags:
 
 ```
 CFLAGS = -DTRAPFPE
@@ -87,9 +87,12 @@ Insert a, b
 0
 Excepción de coma flotante (`core' generado)
 
-
-
 ```
+
+Cuando se usa la función  `set_fpe_x87_sse_();`, cuando se produce la
+excepción de coma flotante, el programa genera interrumpe su ejecución
+y genera un mensaje indicando el error.
+
 
 ## Segmentation Fault
 
