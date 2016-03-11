@@ -134,9 +134,9 @@ Salida con optimización en `-O3`:
 
 ```
 $ ./profile_me_2.e  550
-llamada a exp() elapsed 5.414800: microsecs 
-llamada a sqrt() elapsed 1.577698: microsecs 
-llamada a sin() elapsed 4.075891: microsecs
+llamada a exp() elapsed 5.414800: secs 
+llamada a sqrt() elapsed 1.577698: secs 
+llamada a sin() elapsed 4.075891: secs
 ```
 
 ## Con `perf`
