@@ -158,7 +158,7 @@ Terminado
 ```
 
 La subrutina `void mat_Tmat_mul( float * A, float * C )` alloca `temp`, pero
-no lo libera y  produce el leak de memoria.
+no lo libera y  produce el leak de memoria. Liberando memoria con `free()`.
 
 Ahora se tiene:
 
@@ -303,7 +303,7 @@ a = 7.000000
 
 ```
 
-Comentado la línea del `printf`:
+Comentado la línea del `printf()`:
 
 ```
 $ valgrind --leak-check=full --show-leak-kinds=all ./a.out
