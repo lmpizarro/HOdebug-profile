@@ -1,9 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-
-
-double seconds();
+#include "internal_profiling.h"
 
 int main( int argc, char * argv[] )
 {

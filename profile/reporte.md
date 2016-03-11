@@ -98,6 +98,38 @@ index % time    self  children    called     name
 No obtengo salida 
 
 
+### Uso de medición interna de tiempos
+
+Salida con optimización en `-O1`:
+
+```
+$ ./profile_me_2.e  550
+call to exp() elapsed 50.000000: microsecs 
+call to sqrt() elapsed 12.000000: microsecs 
+call to sin() elapsed 141.000000: microsecs
+
+```
+
+Salida con optimización en `-O0`:
+
+```
+$ ./profile_me_2.e  550
+llamada a exp() elapsed 48.000000: microsecs 
+llamada a sqrt() elapsed 11.000000: microsecs 
+llamada a sin() elapsed 141.000000: microsecs
+
+```
+
+Salida con optimización en `-O3`:
+
+```
+$ ./profile_me_2.e  550
+llamada a exp() elapsed 48.000000: microsecs 
+llamada a sqrt() elapsed 7.000000: microsecs 
+llamada a sin() elapsed 139.000000: microsecs 
+
+```
+
 ## Con `perf`
 
 
