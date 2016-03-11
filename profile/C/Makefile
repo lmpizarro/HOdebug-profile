@@ -8,7 +8,7 @@ OBJECTS_C = $(patsubst %.c, %_c.o, $(SOURCE_C))
 
 EXECUTABLE = profile_me_1.e profile_me_2.e
 
-CFLAGS = -pg -O3
+CFLAGS = -pg -O2
 
 default: help
 
