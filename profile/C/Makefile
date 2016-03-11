@@ -34,7 +34,7 @@ profile_me_1.e: profile_me_1.o
 	$(LD) $^ -o $@ -pg
 
 profile_me_2.e: profile_me_2.o 
-	$(LD) $^ -o $@ -lm -pg
+	$(LD) $^ -o $@ internal_profiling_c.o -lm -pg
 
 clean:
 	rm -rfv *.o $(EXECUTABLE)

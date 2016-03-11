@@ -6,4 +6,6 @@
 *.x
 core.*
 *.out
+*.ans
+*.txt
 

@@ -2,11 +2,15 @@
 #include <stdio.h>
 #include <math.h>
 
+
+double seconds();
+
 int main( int argc, char * argv[] )
 {
 
   double * a, * b, * c;
   double alpha;
+  double elapsed, antes, despues;
 
   int i;
   
@@ -25,20 +29,30 @@ int main( int argc, char * argv[] )
     c[i] = 3.0;
   }
 
+  antes = seconds();
   for( i = 0; i < dim; i++ ){
     
     a[i] = exp( a[i] * i );
   }
+  despues = seconds();
 
-  for( i = 0; i < dim; i++ ){
+  printf ("llamada a exp() elapsed %f: microsecs \n", despues - antes);
+
+  antes = seconds();
+  for( i = 0; i <  dim; i++ ){
     
     a[i] = sqrt( a[i] * i );
   }
+  despues = seconds();
+  printf ("llamada a sqrt() elapsed %f: microsecs \n", despues - antes);
 
+  antes = seconds();
   for( i = 0; i < dim; i++ ){
     
     a[i] = sin( a[i] * i );
   }
+  despues = seconds();
+  printf ("llamada a sin() elapsed %f: microsecs \n", despues - antes);
 
   alpha = 0.0;
   for( i = 0; i < dim; i++ ){
