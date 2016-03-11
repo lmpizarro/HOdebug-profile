@@ -8,6 +8,8 @@ OBJECTS_C = $(patsubst %.c, %_c.o, $(SOURCE_C))
 
 EXECUTABLE = profile_me_1.e profile_me_2.e
 
+CFLAGS = -pg
+
 default: help
 
 help:
@@ -26,13 +28,13 @@ executable: $(EXECUTABLE)
 all: objects executable
 
 %_c.o: %.c
-	$(CC) -c $^ -o $@
+	$(CC) -c $^ -o $@ $(CFLAGS)
 
 profile_me_1.e: profile_me_1.o 
-	$(LD) $^ -o $@ 
+	$(LD) $^ -o $@ -pg
 
 profile_me_2.e: profile_me_2.o 
-	$(LD) $^ -o $@ -lm
+	$(LD) $^ -o $@ -lm -pg
 
 clean:
-	rm -rfv $(OBJECTS_C) $(EXECUTABLE)
+	rm -rfv *.o $(EXECUTABLE)

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define SIZE 5000
+#define SIZE 550
 
 void first_assign(int i1, int i2, double * a, double * b, double * c )
 {  
@@ -29,7 +29,7 @@ int main( int argc, char * argv[] )
     }
   }
 
-   for( i = 0; i < SIZE; i++ ){
+  for( i = 0; i < SIZE; i++ ){
     for( j = 0; j < SIZE; j++ ){
       first_assign(i, j, &a[0][0], &b[0][0], &c[0][0]);
     }

@@ -104,6 +104,8 @@ Cuando se ejecuta el código `big.x` antes de ejectutar `$ulimit -s unlimited`
 ,que no pone límites en el uso de la memoria disponible para el stack ,  
 produce un error: `Violación de segmento ('core' generado)`. 
 
+La solución con `ulimit -s ...` no es una solución en el sentido
+del debugging dado que  no se elimina el error que produce el problema.
 
 ## Valgrind
 
