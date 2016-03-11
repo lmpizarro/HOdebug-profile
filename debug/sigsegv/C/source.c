@@ -30,23 +30,28 @@
 #ifdef __SMALL
 #define SIZE 100
 #else 
-#define SIZE 2500
+#define SIZE 5000
 #endif
 
 void mat_Tmat_mul( float * A, float * C ){
 
   int i, j, k;
-  float temp[ SIZE ][ SIZE ];
+  float * temp;
+
+  temp = (float *) malloc( SIZE * SIZE * sizeof(float) );
 
   for( i = 0; i < SIZE; i++ )
     for( j = 0; j < SIZE; j++ )
-      temp[ j ][ i ] = A[ ( i * SIZE ) + j ];
+      temp[ j + i * SIZE ] = A[ ( i * SIZE ) + j ];
 
+ 
   for( i = 0; i < SIZE; i++ )
     for( j = 0; j < SIZE; j++ )
       for( k = 0; k < SIZE; k++ )
-	C[ ( i * SIZE ) + j ] += A[ ( i * SIZE ) + k ] * temp[ k ][ j ] ;
-  
+	C[ ( i * SIZE ) + j ] += A[ ( i * SIZE ) + k ] * temp[ j + i * SIZE ] ;
+
+ 
+  free(temp);
 }
 
 int main( int argc, char * argv[] ){
