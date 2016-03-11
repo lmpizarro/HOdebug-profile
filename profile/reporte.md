@@ -104,19 +104,18 @@ Salida con optimización en `-O0`:
 
 ```
 $ ./profile_me_2.e  550
-llamada a exp() elapsed 48.000000: microsecs 
-llamada a sqrt() elapsed 11.000000: microsecs 
-llamada a sin() elapsed 141.000000: microsecs
-
+llamada a exp() elapsed 5.711531: secs 
+llamada a sqrt() elapsed 2.708098: secs 
+llamada a sin() elapsed 4.465816: secs
 ```
 
 Salida con optimización en `-O1`:
 
 ```
 $ ./profile_me_2.e  550
-call to exp() elapsed 50.000000: microsecs 
-call to sqrt() elapsed 12.000000: microsecs 
-call to sin() elapsed 141.000000: microsecs
+llamada a exp() elapsed 5.418941: secs 
+llamada a sqrt() elapsed 2.873274: secs 
+llamada a sin() elapsed 4.133279: secs 
 
 ```
 
@@ -125,19 +124,19 @@ Salida con optimización en `-O2`:
 
 ```
 $ ./profile_me_2.e  550
-llamada a exp() elapsed 48.000000: microsecs 
-llamada a sqrt() elapsed 7.000000: microsecs 
-llamada a sin() elapsed 139.000000: microsecs 
+llamada a exp() elapsed 5.425079: secs 
+llamada a sqrt() elapsed 1.578846: secs 
+llamada a sin() elapsed 4.073390: secs
+
 ```
 
 Salida con optimización en `-O3`:
 
 ```
 $ ./profile_me_2.e  550
-llamada a exp() elapsed 48.000000: microsecs 
-llamada a sqrt() elapsed 7.000000: microsecs 
-llamada a sin() elapsed 139.000000: microsecs 
-
+llamada a exp() elapsed 5.414800: microsecs 
+llamada a sqrt() elapsed 1.577698: microsecs 
+llamada a sin() elapsed 4.075891: microsecs
 ```
 
 ## Con `perf`

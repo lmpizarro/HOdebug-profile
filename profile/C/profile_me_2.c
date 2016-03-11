@@ -3,6 +3,10 @@
 #include <math.h>
 #include "internal_profiling.h"
 
+
+#define ITERS 1000000
+
+
 int main( int argc, char * argv[] )
 {
 
@@ -10,7 +14,7 @@ int main( int argc, char * argv[] )
   double alpha;
   double elapsed, antes, despues;
 
-  int i;
+  int i,j;
   
   size_t dim;
   
@@ -28,26 +32,30 @@ int main( int argc, char * argv[] )
   }
 
   antes = seconds();
+  for( j = 0; j < ITERS; j++ ){
   for( i = 0; i < dim; i++ ){
-    
     a[i] = exp( a[i] * i );
+  }
   }
   despues = seconds();
 
   printf ("llamada a exp() elapsed %f: microsecs \n", despues - antes);
 
   antes = seconds();
+  for( j = 0; j < ITERS; j++ ){
   for( i = 0; i <  dim; i++ ){
-    
     a[i] = sqrt( a[i] * i );
+  }
   }
   despues = seconds();
   printf ("llamada a sqrt() elapsed %f: microsecs \n", despues - antes);
 
   antes = seconds();
+
+  for( j = 0; j < ITERS; j++ ){
   for( i = 0; i < dim; i++ ){
-    
     a[i] = sin( a[i] * i );
+  }
   }
   despues = seconds();
   printf ("llamada a sin() elapsed %f: microsecs \n", despues - antes);
