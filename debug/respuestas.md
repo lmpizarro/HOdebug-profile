@@ -97,7 +97,7 @@ y genera un mensaje indicando el error.
 ## Segmentation Fault
 
 [ulimit y sysctl](http://www.linuxhowtos.org/Tips%20and%20Tricks/ulimit.htm)
-son programas programas que permiten poner límite a la disponibilidad
+son programas que permiten poner límite a la disponibilidad
 de recursos de sistema. `$ulimit -a` permite conocer el límite de los recursos.
 
 Cuando se ejecuta el código `big.x` antes de ejectutar `$ulimit -s unlimited` 
@@ -106,6 +106,17 @@ produce un error: `Violación de segmento ('core' generado)`.
 
 La solución con `ulimit -s ...` no es una solución en el sentido
 del debugging dado que  no se elimina el error que produce el problema.
+
+La solución del bug consiste en hacer allocación dinámica de memoria
+para la matríz `temp` en la función `void mat_Tmat_mul( float * A, float * C )`.
+
+```
+  float * temp;
+
+  temp = (float *) malloc( SIZE * SIZE * sizeof(float) );
+```
+
+
 
 ## Valgrind
 
